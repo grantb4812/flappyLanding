@@ -58,10 +58,11 @@ gulp.task('images', function() {
 gulp.task('watch', function() {
   gulp.watch('site/js/*.js', ['jshint']);
   gulp.watch('site/scss/*.scss', ['sass']);
+  gulp.watch('site/css/*.css', ['styles']);
 });
 
 // Default task
-gulp.task('default', ['jshint', 'sass', 'watch']);
+gulp.task('default', ['jshint', 'sass', 'scripts', 'styles', 'html', 'watch']);
 
 // Build task
 gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images']);
