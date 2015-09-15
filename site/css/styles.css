@@ -355,5 +355,13 @@ td,
 th {
   padding: 0; }
 
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
 body {
   background-color: blue; }
