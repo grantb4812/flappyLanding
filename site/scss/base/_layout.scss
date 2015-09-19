@@ -2,6 +2,12 @@ $title-font: 'Indie Flower', cursive;
 $creative-font: 'Shadows Into Light', cursive;
 $wild-font: 'Orbitron', sans-serif;
 
+
+body {
+	background-color: blue;
+}
+
+
 .container {
 	
 	@include outer-container();

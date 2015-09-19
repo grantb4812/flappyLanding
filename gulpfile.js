@@ -21,9 +21,10 @@ gulp.task('jshint', function() {
 
 // Compile Sass task
 gulp.task('sass', function() {
-  return gulp.src('site/scss/*.scss')
+  return gulp.src('site/scss/**/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('site/css'));
+    .pipe(gulp.dest('site/css'))
+    .pipe(livereload());
 });
 
 // Minify index
@@ -55,20 +56,12 @@ gulp.task('images', function() {
     .pipe(gulp.dest('build/img'));
 });
 
-//adding live reload task
-/*
-gulp.task('reload', function(){
-  return gulp.src('site/scss/*.scss')
-      .pipe(sass())
-      .pipe(gulp.dest('site/css'))
-      .pipe(livereload());
-});
-*/
+
 // Watch task
 gulp.task('watch', function() {
-  // livereload.listen();
+  livereload.listen();
+  gulp.watch('site/scss/**/*.scss', ['sass']);
   gulp.watch('site/js/*.js', ['jshint']);
-  gulp.watch('site/scss/*.scss', ['sass']);
   gulp.watch('site/css/*.css', ['styles']);
 });
 

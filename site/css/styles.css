@@ -363,6 +363,9 @@ html {
 *::before {
   box-sizing: inherit; }
 
+body {
+  background-color: blue; }
+
 .container {
   max-width: 68em;
   margin-left: auto;
